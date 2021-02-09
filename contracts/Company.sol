@@ -12,6 +12,7 @@ contract Company {
   uint256 public companyCount;
 
   struct CompanyDetails {
+    uint256 id;
     string name;
     string tin;
     string dateOfIncorporation;
@@ -26,6 +27,7 @@ contract Company {
   
   //EVENTS
   event CompanyDetailsEvent (
+    uint256  _id,
     string  _name,
     string  _tin,
     string  _dateOfIncorporation,
@@ -43,13 +45,13 @@ contract Company {
   function registerCompany( string memory _name, string memory _tin, string memory _dateOfIncorporation, string memory _certOfIncorporation, string memory _nafdacNumber, string memory _rcNumber ) public {
 
     require(!registeredCompanies[_nafdacNumber], "Company with this NAFDAC number already exist");
-
-    companyDetails[msg.sender] = CompanyDetails(_name, _tin, _dateOfIncorporation, _certOfIncorporation,  _nafdacNumber, _rcNumber, block.timestamp);
     companyCount = companyCount.add(1);
+
+    companyDetails[msg.sender] = CompanyDetails(companyCount, _name, _tin, _dateOfIncorporation, _certOfIncorporation,  _nafdacNumber, _rcNumber, block.timestamp);
 
     registeredCompanies[_nafdacNumber] = true;    
 
-    emit CompanyDetailsEvent(_name, _tin, _dateOfIncorporation, _certOfIncorporation,  _nafdacNumber, _rcNumber, block.timestamp);
+    emit CompanyDetailsEvent(companyCount, _name, _tin, _dateOfIncorporation, _certOfIncorporation,  _nafdacNumber, _rcNumber, block.timestamp);
 
   }
 

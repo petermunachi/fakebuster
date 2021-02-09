@@ -45,6 +45,7 @@ contract('Company', ([deployer, user1, user2])=>{
         log.event.should.eq('CompanyDetailsEvent');
 
         const event = log.args;
+        event._id.toString().should.eq('1', "_id is correct");
         event._name.toString().should.eq(name, "_name is correct");
         event._tin.toString().should.eq(tin, "_tin is correct");
         event._dateOfIncorporation.toString().should.eq(dateOfIncorporation, "_dateOfIncorporation is correct");
