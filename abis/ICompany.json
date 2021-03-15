@@ -1,0 +1,698 @@
+{
+  "contractName": "ICompany",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_nafdacNumber",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_applicant",
+          "type": "string"
+        }
+      ],
+      "name": "registerCompany",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_tin",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_rcNumber",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_incorporation",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_license",
+          "type": "string"
+        }
+      ],
+      "name": "updateRegisteredCompany",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_nafdacNumber\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_applicant\",\"type\":\"string\"}],\"name\":\"registerCompany\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_tin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_rcNumber\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_incorporation\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_license\",\"type\":\"string\"}],\"name\":\"updateRegisteredCompany\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Peter/Documents/corporate/block/project/fakebuster/contracts/interfaces/ICompany.sol\":\"ICompany\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Peter/Documents/corporate/block/project/fakebuster/contracts/interfaces/ICompany.sol\":{\"keccak256\":\"0x1c7dd4f38198dc69c70032458b4a6719dd4fad032ff02b9a2369aebf7e648d2e\",\"urls\":[\"bzz-raw://b81eedaa7af7aab4667d88007d9797d4ffe9e2272a7b21e17de4a1419124c5b5\",\"dweb:/ipfs/QmcCtMhbftfaXkrmtppk57PmmpmgcZQc85qzpVqbc95BLH\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.8.0;\r\n\r\n\r\ninterface ICompany {\r\n  function registerCompany (string calldata _name, string calldata _nafdacNumber, string calldata _applicant) external;\r\n\r\n  function updateRegisteredCompany(string calldata _tin, string calldata _rcNumber, string calldata _incorporation, string calldata _license) external;\r\n\r\n}",
+  "sourcePath": "C:/Users/Peter/Documents/corporate/block/project/fakebuster/contracts/interfaces/ICompany.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Peter/Documents/corporate/block/project/fakebuster/contracts/interfaces/ICompany.sol",
+    "exportedSymbols": {
+      "ICompany": [
+        241
+      ]
+    },
+    "id": 242,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 220,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".0",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 241,
+        "linearizedBaseContracts": [
+          241
+        ],
+        "name": "ICompany",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "d0b02074",
+            "id": 229,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerCompany",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 227,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 222,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 229,
+                  "src": "120:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 221,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "120:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 224,
+                  "name": "_nafdacNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 229,
+                  "src": "143:29:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 223,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "143:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 226,
+                  "name": "_applicant",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 229,
+                  "src": "174:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 225,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "174:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "119:82:1"
+            },
+            "returnParameters": {
+              "id": 228,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "210:0:1"
+            },
+            "scope": 241,
+            "src": "94:117:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "d98f5ade",
+            "id": 240,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateRegisteredCompany",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 238,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 231,
+                  "name": "_tin",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "250:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 230,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 233,
+                  "name": "_rcNumber",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "272:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 232,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "272:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 235,
+                  "name": "_incorporation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "299:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 234,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 237,
+                  "name": "_license",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "331:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 236,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "331:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "249:107:1"
+            },
+            "returnParameters": {
+              "id": 239,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "365:0:1"
+            },
+            "scope": 241,
+            "src": "217:149:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 242,
+        "src": "70:301:1"
+      }
+    ],
+    "src": "33:338:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/Peter/Documents/corporate/block/project/fakebuster/contracts/interfaces/ICompany.sol",
+      "exportedSymbols": {
+        "ICompany": [
+          241
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.6",
+            ".0",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 220,
+        "name": "PragmaDirective",
+        "src": "33:31:1"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            241
+          ],
+          "name": "ICompany",
+          "scope": 242
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "d0b02074",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "registerCompany",
+              "overrides": null,
+              "scope": 241,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "overrides": null,
+                      "scope": 229,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 221,
+                        "name": "ElementaryTypeName",
+                        "src": "120:6:1"
+                      }
+                    ],
+                    "id": 222,
+                    "name": "VariableDeclaration",
+                    "src": "120:21:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_nafdacNumber",
+                      "overrides": null,
+                      "scope": 229,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 223,
+                        "name": "ElementaryTypeName",
+                        "src": "143:6:1"
+                      }
+                    ],
+                    "id": 224,
+                    "name": "VariableDeclaration",
+                    "src": "143:29:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_applicant",
+                      "overrides": null,
+                      "scope": 229,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 225,
+                        "name": "ElementaryTypeName",
+                        "src": "174:6:1"
+                      }
+                    ],
+                    "id": 226,
+                    "name": "VariableDeclaration",
+                    "src": "174:26:1"
+                  }
+                ],
+                "id": 227,
+                "name": "ParameterList",
+                "src": "119:82:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 228,
+                "name": "ParameterList",
+                "src": "210:0:1"
+              }
+            ],
+            "id": 229,
+            "name": "FunctionDefinition",
+            "src": "94:117:1"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "d98f5ade",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "updateRegisteredCompany",
+              "overrides": null,
+              "scope": 241,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_tin",
+                      "overrides": null,
+                      "scope": 240,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 230,
+                        "name": "ElementaryTypeName",
+                        "src": "250:6:1"
+                      }
+                    ],
+                    "id": 231,
+                    "name": "VariableDeclaration",
+                    "src": "250:20:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_rcNumber",
+                      "overrides": null,
+                      "scope": 240,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 232,
+                        "name": "ElementaryTypeName",
+                        "src": "272:6:1"
+                      }
+                    ],
+                    "id": 233,
+                    "name": "VariableDeclaration",
+                    "src": "272:25:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_incorporation",
+                      "overrides": null,
+                      "scope": 240,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 234,
+                        "name": "ElementaryTypeName",
+                        "src": "299:6:1"
+                      }
+                    ],
+                    "id": 235,
+                    "name": "VariableDeclaration",
+                    "src": "299:30:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_license",
+                      "overrides": null,
+                      "scope": 240,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 236,
+                        "name": "ElementaryTypeName",
+                        "src": "331:6:1"
+                      }
+                    ],
+                    "id": 237,
+                    "name": "VariableDeclaration",
+                    "src": "331:24:1"
+                  }
+                ],
+                "id": 238,
+                "name": "ParameterList",
+                "src": "249:107:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 239,
+                "name": "ParameterList",
+                "src": "365:0:1"
+              }
+            ],
+            "id": 240,
+            "name": "FunctionDefinition",
+            "src": "217:149:1"
+          }
+        ],
+        "id": 241,
+        "name": "ContractDefinition",
+        "src": "70:301:1"
+      }
+    ],
+    "id": 242,
+    "name": "SourceUnit",
+    "src": "33:338:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.0+commit.26b70077.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-15T13:51:34.954Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

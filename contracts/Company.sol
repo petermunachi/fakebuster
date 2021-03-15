@@ -16,35 +16,40 @@ contract Company is Ownable {
   struct CompanyDetails {
     uint256 id;
     string name;
-    string tin;
-    string dateOfIncorporation;
-    string certOfIncorporation;
     string nafdacNumber;
+    string applicant;
+  }
+  
+  struct CompanyCertificates {
+    string tin;
     string rcNumber;
+    string incorporation;
+    string license;
     uint256 dateCreated;
   }
   
   mapping (address=>CompanyDetails) public companyDetails;
-  mapping (string=>bool) public registeredCompanies;
-  mapping (string=>bool) public verifiedCompanies;
+  mapping (address=>CompanyCertificates) public companyCertificates;
+
+  mapping (address=>bool) public registeredCompanies;
+  mapping (address=>bool) public verifiedCompanies;
 
   
   // EVENTS
-  event CompanyDetailsEvent (
-    uint256  _id,
-    string  _name,
-    string  _tin,
-    string  _dateOfIncorporation,
-    string _certOfIncorporation,
+  event RegisteredCompanyEvent (
+    uint256 _id,
+    string _name,
     string _nafdacNumber,
-    string _rcNumber,
+    string _applicant
+  );
+  event CompletedCompanyEvent (
+    uint256 _id,
     uint256 _dateCreated
-    
   );
   
   event VerifiedCompanyEvent (
     uint256  _id,
-    string _nafdacNumber,
+    address _companyAddress,
     uint256 _dateVerified
   );
   
@@ -53,27 +58,41 @@ contract Company is Ownable {
     
   }
 
-  function registerCompany (string calldata _name, string calldata _tin, string calldata _dateOfIncorporation, string calldata _certOfIncorporation, string calldata _nafdacNumber, string calldata _rcNumber ) external {
+  function registerCompany (string calldata _name, string calldata _nafdacNumber, string calldata _applicant ) external {
 
-    require(!registeredCompanies[_nafdacNumber], "Company with this NAFDAC number already exist");
+    require(!registeredCompanies[msg.sender], "Company with this ADDRESS already exist");
     companyCount = companyCount.add(1);
 
-    companyDetails[msg.sender] = CompanyDetails(companyCount, _name, _tin, _dateOfIncorporation, _certOfIncorporation,  _nafdacNumber, _rcNumber, block.timestamp);
+    companyDetails[msg.sender] = CompanyDetails(companyCount, _name, _nafdacNumber, _applicant);
 
-    registeredCompanies[_nafdacNumber] = true;    
-
-    emit CompanyDetailsEvent(companyCount, _name, _tin, _dateOfIncorporation, _certOfIncorporation,  _nafdacNumber, _rcNumber, block.timestamp);
+    emit RegisteredCompanyEvent(companyCount, _name, _nafdacNumber, _applicant); 
 
   }
 
-  function verifyCompany(string calldata _nafdacNumber) external onlyOwner {
+  function uploadCertificates(string calldata _tin, string calldata _rcNumber, string calldata _incorporation, string calldata _license) external {
 
-    require(registeredCompanies[_nafdacNumber], "Company with this NAFDAC number does not exist");
+    CompanyDetails storage company = companyDetails[msg.sender];
+    bytes memory name = bytes(company.name); 
 
-    verifiedCompanies[_nafdacNumber] = true;
+    require(name.length != 0, "Company with this ADDRESS does not exist");
+    uint256 time = block.timestamp;
+
+    companyCertificates[msg.sender] = CompanyCertificates(_tin, _rcNumber, _incorporation, _license, time);
+
+    registeredCompanies[msg.sender] = true;
+
+    emit CompletedCompanyEvent(company.id, time); 
+
+  }
+
+  function verifyCompany(address  _companyAddress) external onlyOwner {
+
+    require(!registeredCompanies[_companyAddress], "Company with this NAFDAC number does not exist");
+
+    verifiedCompanies[_companyAddress] = true;
     verifiedCompanyCount.add(1);
 
-    emit VerifiedCompanyEvent(verifiedCompanyCount, _nafdacNumber, block.timestamp);
+    emit VerifiedCompanyEvent(verifiedCompanyCount, _companyAddress, block.timestamp);
 
   }
 
